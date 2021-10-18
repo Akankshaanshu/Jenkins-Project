@@ -1,7 +1,12 @@
 #!/bin/bash
 pipeline 
 {
-    agent any
+    agent 
+     environment {
+
+    PATH = "C:\\WINDOWS\\SYSTEM32"
+
+    }
     tools {
                 jdk "JDKDefault"
                 maven "MavenDefault"
