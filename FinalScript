@@ -54,10 +54,10 @@ pipeline
                         type: 'jar'
                     ]
                 ], 
-                credentialsId: 'nexus3', 
+                credentialsId: 'nexus4', 
                 groupId: 'demoproject', 
                 nexusUrl: 'localhost:8081', 
-                nexusVersion: 'nexus3', 
+                nexusVersion: 'nexus4', 
                 protocol: 'http', 
                 repository: 'FinalPipeline', 
                 version: '1.${BUILD_NUMBER}'
