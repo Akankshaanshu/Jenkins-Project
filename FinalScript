@@ -63,13 +63,15 @@ pipeline
                 version: '1.${BUILD_NUMBER}'
             }
         }
-        stage('SonarQube Analysis')
-        {
+       stage('Sonarqube Analysis'){
             steps{
-                withSonarQubeEnv('sonarqube') {
-                    bat 'mvn sonar:sonar -D sonar.login=2dfc94e02c4bc317684cc91e82c6036256ce77a3'
+                withSonarQubeEnv(installationName:'sonarqube')
+                { // You can override the credential to be used
+                    bat 'mvn clean test sonar:sonar -D sonar.login=2dfc94e02c4bc317684cc91e82c6036256ce77a3'
+                    
                 }
             }
+       
         }
         stage("Quality Gate") {
             steps {
