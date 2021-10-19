@@ -54,7 +54,7 @@ pipeline
                         type: 'jar'
                     ]
                 ], 
-                credentialsId: 'Nexus', 
+                credentialsId: 'nexus3', 
                 groupId: 'demoproject', 
                 nexusUrl: 'localhost:8081', 
                 nexusVersion: 'nexus3', 
