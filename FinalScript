@@ -43,10 +43,10 @@ pipeline
             }
         }
        stage('uploading jar file in nexus'){
-       {
+       
        steps{
        
-       nexusArtifactUploader artifacts: [[artifactId: 'jenkins', classifier: '', file: 'pom.xml', type: 'jar']], credentialsId: '4d10e7ab-31fa-4f76-9168-d49066f56faf', groupId: 'demoproject', nexusUrl: 'localhost:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'FinalPipeline', version: '0.0.1-SNAPSHOT'}}}
+       nexusArtifactUploader artifacts: [[artifactId: 'jenkins', classifier: '', file: 'pom.xml', type: 'jar']], credentialsId: '4d10e7ab-31fa-4f76-9168-d49066f56faf', groupId: 'demoproject', nexusUrl: 'localhost:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'FinalPipeline', version: '0.0.1-SNAPSHOT'}}
        stage('Sonarqube Analysis'){
             steps{
                 withSonarQubeEnv(installationName:'sonarqube')
